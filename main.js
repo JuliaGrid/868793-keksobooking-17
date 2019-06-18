@@ -17,8 +17,8 @@ var pins = [
       type: 'palace'
     },
     location: {
-      x: '200px',
-      y: '150px'
+      x: '130px',
+      y: '420px'
     }
   },
 
@@ -30,8 +30,8 @@ var pins = [
       type: 'flat'
     },
     location: {
-      x: '150px',
-      y: '250px'
+      x: '205px',
+      y: '210px'
     }
   },
 
@@ -43,8 +43,8 @@ var pins = [
       type: 'house'
     },
     location: {
-      x: '200px',
-      y: '150px'
+      x: '280px',
+      y: '435px'
     }
   },
 
@@ -56,8 +56,8 @@ var pins = [
       type: 'bungalo'
     },
     location: {
-      x: '400px',
-      y: '400px'
+      x: '490px',
+      y: '510px'
     }
   },
 
@@ -69,8 +69,8 @@ var pins = [
       type: 'flat'
     },
     location: {
-      x: '350px',
-      y: '550px'
+      x: '85px',
+      y: '575px'
     }
   },
 
@@ -82,8 +82,8 @@ var pins = [
       type: 'house'
     },
     location: {
-      x: '50px',
-      y: '500px'
+      x: '240px',
+      y: '575px'
     }
   },
 
@@ -95,8 +95,8 @@ var pins = [
       type: 'bungalo'
     },
     location: {
-      x: '300px',
-      y: '570px'
+      x: '390px',
+      y: '195px'
     }
   },
 
@@ -108,8 +108,8 @@ var pins = [
       type: 'palace'
     },
     location: {
-      x: '460px',
-      y: '150px'
+      x: '430px',
+      y: '390px'
     }
   }
 ]
