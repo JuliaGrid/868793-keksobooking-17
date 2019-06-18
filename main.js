@@ -120,6 +120,7 @@ var renderPins = function (pin){
   var pinElement = pinsTemplate.cloneNode(true);
 
   pinElement.querySelector('img').src = pin.author.avatar;
+  pinElement.querySelector('img').alt = pin.offer.type;
   pinElement.querySelector('button').style.left = pin.location.x;
   pinElement.querySelector('button').style.top = pin.location.y;
 
