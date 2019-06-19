@@ -1,9 +1,8 @@
- var mapfaded = document.querySelector('.map--faded');
-
-mapfaded.classList.remove("map--faded");
-
 var map = document.querySelector('.map');
-
+var mapPin = document.querySelector('.map__pin--main');
+var adForm = document.querySelector('.ad-form');
+var address = document.querySelector('#address');
+var coordinates = mapPin.getBoundingClientRect();
 
 var pinsTemplate = document.querySelector('#pin')
 .content;
@@ -115,6 +114,23 @@ var pins = [
 ]
 
 
+var mapOpen = function() {
+  map.classList.remove('map--faded');
+}
+
+var formEnable = function() {
+  adForm.classList.remove('ad-form--disabled');
+}
+
+var coordinatesPut = function() {
+  address.value = coordinates.left + ", " + coordinates.bottom;
+}
+
+mapPin.addEventListener('click', function() {
+  mapOpen();
+  formEnable();
+  coordinatesPut();
+});
 
 var renderPins = function (pin){
   var pinElement = pinsTemplate.cloneNode(true);
@@ -126,6 +142,8 @@ var renderPins = function (pin){
 
   return pinElement;
 }
+
+
 
 var fragment = document.createDocumentFragment();
 for (var i = 0; i < pins.length; i++){
