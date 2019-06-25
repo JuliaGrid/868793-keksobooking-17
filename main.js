@@ -152,7 +152,7 @@ for (var i = 0; i < pins.length; i++){
 
 map.appendChild(fragment);
 
-var changePrice = function(){
+/* var changePrice = function(){
   if (document.querySelector('#type').value === 'bungalo') {
     document.querySelector('#price').min = '0';
   }else if (document.querySelector('#type').value === 'flat'){
@@ -162,4 +162,27 @@ var changePrice = function(){
   }else if (document.querySelector('#type').value === 'palace'){
     document.querySelector('#price').min = '10000';
   }
+} */
+
+ var indexType = 0;
+
+var checkIndexGroup = function() {
+  var typeElem = document.type.typeElem;
+  for(var i = 0; i < typeElem.length; i++){
+    if (typeElem[i].checked) {
+      indexType = i;
+      break;
+    }
+  }
 }
+
+var changePrice = function(){
+  if(indexType === '1') {
+    document.querySelector('#price').min = '0';
+  } else if (indexType === '2'){
+    document.querySelector('#price').min = '1000';
+  }else if (indexType === '3'){
+    document.querySelector('#price').min = '5000';
+  }else if (indexType === '4'){
+    document.querySelector('#price').min = '10000';
+} 
