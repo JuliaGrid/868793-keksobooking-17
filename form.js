@@ -1,6 +1,9 @@
 'use strict';
 
 (function() {
+window.map = document.querySelector('.map');
+window.mapPin = document.querySelector('.map__pin--main');
+
 var address = document.querySelector('#address');
 
 var coordinatesPut = function() {

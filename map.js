@@ -14,5 +14,6 @@ var formEnable = function() {
 mapPin.addEventListener('click', function() {
   mapOpen();
   formEnable();
+  renderPinsOnMap();
 });
 })();
