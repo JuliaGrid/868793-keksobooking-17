@@ -5,10 +5,9 @@ var pinsTemplate = document.querySelector('#pin')
 .content;
 var errorTemplate = document.querySelector('#error')
 .content;
+window.URL = 'https://js.dump.academy/keksobooking/data';
 
-
-
-var renderPins = function (pin) {
+window.renderPins = function (pin) {
   var pinElement = pinsTemplate.cloneNode(true);
 
   pinElement.querySelector('img').src = pin.author.avatar;
@@ -18,23 +17,25 @@ var renderPins = function (pin) {
 
   return pinElement;
 }
-
-  window.renderPinsOnMap = function () {
-  var successHandler = function (pins) {
-  var fragment = document.createDocumentFragment();
-
-  for (var i = 0; i < pins.length; i++){
-    fragment.appendChild(renderPins(pins[i]));
+var rarar = document.querySelector('.map__pins');
+window.render = function (data) {
+  rarar.innerHTML = '';
+  for (var i = 0; i < data.length; i++){
+    rarar.appendChild(renderPins(data[i]));
   }
+  rarar.appendChild(mapPin);
+}
 
-  map.appendChild(fragment);
+window.pins = [];
+
+window.renderPinsOnMap = function () {
+  var successHandler = function (data) {
+  pins = data;
+  window.updatePins(pins)
+  //window.render(pins);
 };
 
 var errorHandler = function (errorMessage) {
-  /*var fragment = document.createDocumentFragment();
-  fragment.appendChild(errorTemplate);
-  map.appendChild(fragment);*/
-
   var node = document.createElement('div');
     node.style = 'z-index: 100; margin: 0 auto; text-align: center; background-color: #f0f0eb; border: 1px solid #dededa';
     node.style.position = 'absolute';
@@ -46,7 +47,6 @@ var errorHandler = function (errorMessage) {
     + errorMessage;
     document.body.insertAdjacentElement('afterbegin', node);
 };
-
-  window.load(successHandler, errorHandler);
+  window.load(URL, successHandler, errorHandler);
 };
 })();
